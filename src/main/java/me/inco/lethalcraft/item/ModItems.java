@@ -12,7 +12,7 @@ import net.minecraft.util.Identifier;
 
 public class ModItems {
     public static final Item STOPSIGN = registerItem("stopsign", new Item(new FabricItemSettings()));
-    private static void addItemsToIngredientTabItemGroup(FabricItemGroupEntries entries){
+    private static void addItemsToToolsTabItemGroup(FabricItemGroupEntries entries){
         entries.add(STOPSIGN);
     }
     private static Item registerItem(String name, Item item){
@@ -21,6 +21,6 @@ public class ModItems {
     public static void registerModItems() {
         LethalCraft.LOGGER.info("Registering Mod Items for "+ LethalCraft.MOD_ID);
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.getDefaultTab()).register(ModItems::addItemsToIngredientTabItemGroup);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(ModItems::addItemsToToolsTabItemGroup);
     }
 }
